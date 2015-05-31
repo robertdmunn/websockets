@@ -1,7 +1,7 @@
 # websocket-client
 Simple Extension of websocket client by Too Tall Nate https://github.com/TooTallNate/Java-WebSocket
 
-** What it is**
+**What it is**
 
 This project grew out of my need to implement a Websocket client in Lucee CFML Server (www.lucee.org). It implements a very basic Websocket client in Java.
 This client is callable as a Java object in CFML from within Lucee. 
@@ -19,4 +19,4 @@ This client is callable as a Java object in CFML from within Lucee.
    - You can then call the file using Mark Mandel's Javaloader (https://github.com/markmandel/JavaLoader).
    
 For an example of how and why you would implement the websocket client in a CFML app, see the Websocket-sample app (https://github.com/robertdmunn/websocket-sample).
-
+The client is called in /model/logging/WebSocketAppender.cfc.
