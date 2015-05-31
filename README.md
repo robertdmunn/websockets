@@ -18,5 +18,5 @@ This client is callable as a Java object in CFML from within Lucee.
    
    - You can then call the file using Mark Mandel's Javaloader (https://github.com/markmandel/JavaLoader).
    
-For an example of how and why you would implement the websocket client in a CFML app, see the Websocket-sample app (https://github.com/robertdmunn/websocket-sample).
+For an example of how and why you would implement the websocket client in a CFML app, see the Coldbox-sample app (https://github.com/robertdmunn/coldbox-sample).
 The client is called in /model/logging/WebSocketAppender.cfc.
