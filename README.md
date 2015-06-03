@@ -1,4 +1,9 @@
-# websocket-client
+#Websockets
+
+Websocket IO package in Java. Written for implementation in CFML.
+
+**websocket-client**
+
 Simple Extension of websocket client by Too Tall Nate https://github.com/TooTallNate/Java-WebSocket
 
 **What it is**
