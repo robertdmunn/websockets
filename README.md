@@ -18,5 +18,29 @@ This client is callable as a Java object in CFML from within Lucee.
    
    - You can then call the file using Mark Mandel's Javaloader (https://github.com/markmandel/JavaLoader).
    
-For an example of how and why you would implement the websocket client in a CFML app, see the Coldbox-sample app (https://github.com/robertdmunn/coldbox-sample).
+For an example of how and why you would implement the websocket client in a CFML app, see the Coldboxing app (https://github.com/robertdmunn/coldboxing).
 The client is called in /model/logging/WebSocketAppender.cfc.
+
+**Implementation**
+
+Load the Java class via Javaloader. You need java_websocket.jar (contained in the /lib folder in this project).
+
+    var paths = arraynew(1);
+    paths[1]= expandpath("/includes/java/java_websocket.jar");
+    paths[2]= expandpath("/includes/java/com.bonnydoonmedia.io.jar");
+    var uri = createObject( "java", "java.net.URI" ).init( "ws://" & getProperty("host") & ":" & getProperty("port") );
+    javaloader = createObject('component',"javaloader.JavaLoader").init(paths);
+    ws = javaloader.create( "com.bonnydoonmedia.io.WSClient" ).init( uri );
+
+    try{
+        ws.connect();
+    }
+    catch(Any e){
+        throw(message="Error opening socket to #getProperty("host")#:#getProperty("port")#",
+        detail=e.message & e.detail & e.stacktrace,
+        type="ConnectionException");
+    }
+    
+    ws.send( entry );
+    
+    ws.close();
