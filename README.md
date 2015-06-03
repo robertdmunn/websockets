@@ -41,6 +41,8 @@ Load the Java class via Javaloader. You need java_websocket.jar (contained in th
         type="ConnectionException");
     }
     
+    entry = "Some message.";
+    
     ws.send( entry );
     
     ws.close();
